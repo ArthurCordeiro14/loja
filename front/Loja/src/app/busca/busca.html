@@ -1,0 +1,28 @@
+<div>
+  <h2>Buscar Produto por ID</h2>
+  
+  <form [formGroup]="formBusca">
+    <div>
+      <label for="id">ID do Produto:</label>
+      <input type="number" id="id" formControlName="id" placeholder="Digite o ID">
+      
+    </div>
+
+    <div>
+      <button type="button" (click)="buscarProduto()">Buscar</button>
+    </div>
+  </form>
+
+ 
+
+  @if (produto()) {
+    <div class="resultado">
+      <h3>Produto Encontrado:</h3>
+      <p>ID: {{ produto()!.id }}</p>
+      <p>Nome: {{ produto()!.nome }}</p>
+      <p>Marca: {{ produto()!.marca }}</p>
+      <p>Preço: R$ {{ produto()!.preco }}</p>
+      <p>Quantidade: {{ produto()!.quantidade }}</p>
+    </div>
+  }
+</div>
